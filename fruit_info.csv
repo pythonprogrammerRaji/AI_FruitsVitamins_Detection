@@ -1,0 +1,18 @@
+fruit,color,vitamin,type
+apple,Red/Green,"Vitamin C, Vitamin A",Fruit
+banana,Yellow,"Vitamin B6, Vitamin C",Fruit
+carrot,Orange,"Vitamin A",Vegetable
+mango,Yellow/Orange,"Vitamin A, Vitamin C, Vitamin E",Fruit
+onion,White/Red,"Vitamin B6, Vitamin C",Vegetable
+potato,Yellow/Purple,"Vitamin A,VitaminB, Vitamin C",Vegetable
+rice,White/Brown,"Vitamin B",Ingredient
+tomato,Red/Green,"Vitamin C, Vitamin K",Vegetable
+Wheat,Yellow/Purple,"Vitamin B, VitaminE",Ingredient
+grapes,Purple/Green,"Vitamin C, Vitamin K",Fruit
+orange,Orange,"Vitamin C, Folate",Fruit
+papaya,Orange/Yellow,"Vitamin A, Vitamin C",Fruit
+
+
+
+
+
