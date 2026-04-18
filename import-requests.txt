@@ -1,0 +1,55 @@
+import requests
+from bs4 import BeautifulSoup
+
+def scrape_jobs(job_role):
+    url = f"https://www.freshersworld.com/jobs/jobsearch/{job_role}-jobs"
+    
+    # Add headers to avoid being blocked
+    headers = {
+        'User-Agent': 'Mozilla/5.0'
+    }
+    
+    # Send the request
+    response = requests.get(url, headers=headers)
+    
+    # Parse HTML using BeautifulSoup
+    soup = BeautifulSoup(response.text, 'html.parser')
+    
+    # Find all job listings
+    jobs = soup.find_all('div', class_='job-container')
+    
+    # If no jobs found
+    if not jobs:
+        print("No jobs found. The website structure may have changed.")
+        return
+
+    # Loop through jobs and extract info
+    for job in jobs:
+
+        # print(job.prettify())
+        # break
+        # job title
+        title_div = job.find('h3') or job.find('a')
+        title = title_div.get_text(strip=True) if title_div else 'No Title'
+
+        # Comapnt Name
+        company_div = job.find('span', class_='comapnt-name')
+        company = company_div.get_text(strip=True) if company_div else 'No Company'
+
+        location_div = job.find('span', class_='job-location')
+        location = location_div.get_text(strip=True) if location_div else 'No Location'
+
+
+       
+        # company = company_div.get_text(strip=True) if company_div else 'No Company'
+        
+
+        print(f"Title   : {title}")
+        print(f"Company : {company}")
+        print(f"Location: {location}")
+        print('-' * 40)
+
+# Main program
+if __name__ == "__main__":
+    job_input = input("Enter the job role: ")
+    scrape_jobs(job_input)
